@@ -18,7 +18,14 @@ script_path = os.path.dirname(os.path.abspath(__file__))
 db_file = f"{script_path}/data/Database.db"
 # msg.warn(db_file)
 paper = db(path=db_file, auto_commit=False, reconnects=5, auto_connect=True)
-paper.create_table("dhfd", ["fdl", "gdl", "grl", "fdmh", "gdmh"], ["REAL", "REAL", "REAL"])
+"""
+create table of saving report monthly 
+"""
+paper.create_table(
+    "dhfd",
+    ["fdl", "gdl", "grl", "fdmh", "gdmh", "zhcydl", "fdcydl", "fhl", "fdsh"],
+    ["REAL", "REAL", "REAL"],
+)
 # Commit changes
 paper.commit()
 # Rollback
